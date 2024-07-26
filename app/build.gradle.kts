@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.com.google.devtools.kts)
+    alias(libs.plugins.com.google.dagger.hilt.android)
+    alias(libs.plugins.navigation.safeargs)
+    kotlin("kapt")
+
 }
 
 android {
@@ -33,6 +38,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -42,7 +52,32 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+
+    implementation(libs.roomdb)
+    implementation(libs.roomKtx)
+    implementation(libs.hilt)
+    implementation(libs.coroutines)
+    implementation(libs.navigationFragment)
+    implementation(libs.navigationUi)
+    implementation(libs.viewmodel)
+    implementation(libs.livedata)
+    implementation(libs.lifecycle)
+    implementation(libs.savedsatateViewmodel)
+
+    ksp(libs.roomdbCompiler)
+    ksp(libs.hiltCompiler)
+
+    kapt(libs.lifecycleCompiler)
+
     testImplementation(libs.junit)
+
+
+
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+}
+
+kapt {
+    correctErrorTypes = true
 }
