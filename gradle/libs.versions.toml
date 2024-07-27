@@ -1,5 +1,7 @@
 [versions]
 agp = "8.5.1"
+core = "1.6.1"
+coreTesting = "2.2.0"
 kotlin = "1.9.0"
 coreKtx = "1.13.1"
 junit = "4.13.2"
@@ -9,6 +11,7 @@ appcompat = "1.7.0"
 material = "1.12.0"
 activity = "1.9.1"
 constraintlayout = "2.1.4"
+mockitoCore = "5.11.0"
 roomdb = "2.6.1"
 roomCompilerKts = "1.9.0-1.0.13"
 hilt = "2.48"
@@ -17,14 +20,18 @@ navigation = "2.7.7"
 lifecycle = "2.8.4"
 
 [libraries]
+androidx-core = { module = "androidx.test:core", version.ref = "core" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-testing = { module = "androidx.arch.core:core-testing", version.ref = "coreTesting" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+kotlinx-coroutines-test = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-test", version.ref = "coroutines" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
 roomdb = { group = "androidx.room", name = "room-runtime", version.ref = "roomdb" }
 roomKtx = { group = "androidx.room", name = "room-ktx", version.ref = "roomdb" }
 roomdbCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomdb" }

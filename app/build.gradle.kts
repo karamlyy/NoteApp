@@ -69,9 +69,13 @@ dependencies {
 
     kapt(libs.lifecycleCompiler)
 
-    testImplementation(libs.junit)
 
-
+    testImplementation (libs.junit)
+    testImplementation (libs.mockito.core)
+    testImplementation (libs.kotlinx.coroutines.test)
+    testImplementation (libs.androidx.core.testing)
+    testImplementation (libs.androidx.core)
+    testImplementation (libs.androidx.junit)
 
 
     androidTestImplementation(libs.androidx.junit)
