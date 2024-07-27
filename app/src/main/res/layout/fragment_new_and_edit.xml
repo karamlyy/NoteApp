@@ -94,9 +94,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_margin="10dp"
-            app:cornerRadius="16dp"
+            app:cornerRadius="13dp"
             android:gravity="center"
-            android:backgroundTint="@color/md_theme_error_mediumContrast"
+            android:backgroundTint="@color/design_default_color_error"
             style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
             android:text="Delete"
             android:textColor="#ffffff"/>

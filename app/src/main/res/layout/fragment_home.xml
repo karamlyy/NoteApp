@@ -38,6 +38,8 @@
             android:layout_height="0dp"
             noteList="@{ViewModel.noteList}"
             setOnClickListener="@{NoteClickListener}"
+            searchQuery="@{ViewModel.searchQuery}"
+            searchNoteList="@{ViewModel.searchNoteList}"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
