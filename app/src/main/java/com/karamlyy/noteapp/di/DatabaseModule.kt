@@ -2,7 +2,6 @@ package com.karamlyy.noteapp.di
 
 import android.content.Context
 import androidx.room.Room
-import androidx.room.RoomDatabase
 import com.karamlyy.noteapp.data.AppDatabase
 import com.karamlyy.noteapp.utilities.Constants.DATABASE_NAME
 import dagger.Module

@@ -11,4 +11,8 @@ data class NoteModel (
     val description: String?,
     val priority: Priority?,
     val isFavorite: Boolean?
-)
+) {
+    fun areContentTheSame(newItem: NoteModel): Boolean {
+        return this.title == newItem.title && this.description == newItem.description && this.priority == newItem.priority && this.isFavorite == newItem.isFavorite
+    }
+}

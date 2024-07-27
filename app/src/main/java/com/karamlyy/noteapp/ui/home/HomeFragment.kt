@@ -8,10 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.karamlyy.noteapp.R
 import com.karamlyy.noteapp.databinding.FragmentHomeBinding
+import com.karamlyy.noteapp.model.NoteModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), NoteClickListener {
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -22,6 +23,10 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+        binding.noteClickListener = this
 
         viewModel.noteList.observe(viewLifecycleOwner) {
             println(it)
@@ -39,6 +44,14 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding
+    }
+
+    override fun onNoteClick(id: Int) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onNoteChecked(noteModel: NoteModel) {
+        TODO("Not yet implemented")
     }
 
 
