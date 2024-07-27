@@ -14,6 +14,7 @@ class HomeListAdapter(private val noteClickListener: NoteClickListener) : ListAd
 
         fun bind(noteClickListener: NoteClickListener, noteModel: NoteModel) {
             binding.noteModel = noteModel
+            binding.noteClickListener = noteClickListener
             binding.executePendingBindings()
         }
 

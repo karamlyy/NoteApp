@@ -19,9 +19,10 @@ class HomeViewModel @Inject constructor(
 
     val noteList = repository.localDataSource.getAllNotes().asLiveData()
 
-    fun insertNote() {
+    fun updateNote(noteModel: NoteModel) {
+        val updatedNoteModel = noteModel.copy(isFavorite = noteModel.isFavorite?.not())
         viewModelScope.launch {
-            repository.localDataSource.insertNote(NoteModel(title = "Title2", description = "Desc", priority = Priority.HIGH, isFavorite = true ))
+            repository.localDataSource.updateNote(updatedNoteModel)
         }
     }
 }

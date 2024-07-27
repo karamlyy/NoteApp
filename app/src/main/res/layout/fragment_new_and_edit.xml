@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.newAndEdit.NewAndEditFragment">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_new_and_edit_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_new_and_edit_title_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Title" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/fragment_new_and_edit_description_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_new_and_edit_title_layout"
+        app:layout_constraintStart_toStartOf="@+id/fragment_new_and_edit_title_layout"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_new_and_edit_title_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/fragment_new_and_edit_description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Description" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:hint="Priority"
+        app:layout_constraintEnd_toEndOf="@+id/fragment_new_and_edit_description_layout"
+        app:layout_constraintStart_toStartOf="@+id/fragment_new_and_edit_description_layout"
+        app:layout_constraintTop_toBottomOf="@+id/fragment_new_and_edit_description_layout">
+
+        <AutoCompleteTextView
+            android:id="@+id/fragment_new_and_edit_auto_complete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <CheckBox
+        android:id="@+id/fragment_new_and_edit_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Important"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_new_and_edit_delete_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cornerRadius="16dp"
+            android:gravity="center"
+            android:backgroundTint="@color/md_theme_error_mediumContrast"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+            android:text="Delete"
+            android:textColor="#ffffff"/>
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/fragment_new_and_edit_save_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="10dp"
+            app:cornerRadius="16dp"
+            android:gravity="center"
+            android:backgroundTint="@color/seed"
+            style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
+            android:text="Save"
+            android:textColor="#ffffff"/>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

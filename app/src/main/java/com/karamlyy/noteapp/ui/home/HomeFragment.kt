@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.karamlyy.noteapp.R
 import com.karamlyy.noteapp.databinding.FragmentHomeBinding
 import com.karamlyy.noteapp.model.NoteModel
@@ -28,12 +29,9 @@ class HomeFragment : Fragment(), NoteClickListener {
         binding.viewModel = viewModel
         binding.noteClickListener = this
 
-        viewModel.noteList.observe(viewLifecycleOwner) {
-            println(it)
-        }
 
         binding.fragmentHomeFab.setOnClickListener {
-            viewModel.insertNote()
+            findNavController().navigate(R.id.action_homeFragment_to_newAndEditFragment)
         }
 
 
@@ -43,15 +41,16 @@ class HomeFragment : Fragment(), NoteClickListener {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding
+        _binding = null
     }
 
     override fun onNoteClick(id: Int) {
-        TODO("Not yet implemented")
+        val action = HomeFragmentDirections.actionHomeFragmentToNewAndEditFragment(id)
+        findNavController().navigate(action)
     }
 
     override fun onNoteChecked(noteModel: NoteModel) {
-        TODO("Not yet implemented")
+        viewModel.updateNote(noteModel)
     }
 
 
